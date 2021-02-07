@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+
+namespace InterfaceTypes
+{
+    class Program
+    {
+        public static void FindMatches(IList<string>iList, object[] ob)
+        {
+            Console.WriteLine("Match array is: ");
+            foreach (object o in ob)
+            {
+                Console.WriteLine("{0}", o.ToString());
+            }
+            foreach (object o in ob)
+            {
+                if (iList.Contains(o.ToString()))
+                    Console.WriteLine("\niList contains {0} at index: {1}", o, iList.IndexOf(o.ToString()));
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            string[] strings = {"one", "two", "four", "eight"};
+            Console.WriteLine("Strings array values:");
+            foreach (String s in strings)
+            {
+                Console.WriteLine("{0}", s);
+            }
+            Console.WriteLine("\n");
+            FindMatches(strings, new String[] { "zero", "one", "five", "eight" });
+            Console.ReadKey();
+        }
+    }
+}
+
