@@ -1,0 +1,66 @@
+using System;
+
+namespace SetAndGetProperties
+{
+    class Student
+    {
+        private String usn = "NA";
+        private String name = "not known";
+        private int age = 0;
+        public String Usn
+        {
+            get
+            {
+                return usn;
+            }
+            set
+            {
+                usn = value;
+            }
+        }
+
+        public String Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+            set
+            {
+                age = value;
+            }
+        }
+
+        public override string ToString()
+        {
+            return "\nUSN: " + usn + "\nName: " + name + "\nAge: " + age;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student s = new Student();
+            s.Usn = "1NT18MCA01";
+            s.Name = "Lewis";
+            s.Age = 23;
+            Console.WriteLine("Student Information {0}", s);
+            
+            s.Age += 1;
+            Console.WriteLine("\nStudent Information {0}", s);
+            Console.ReadLine();
+        }
+    }
+}

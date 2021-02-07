@@ -1,0 +1,33 @@
+using System;
+
+namespace ExceptionHandling
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] intArr = new int[9];
+            try
+            {
+                Console.WriteLine("Try block started");
+                for (int i = 0; i < 8; i++)
+                {
+                    intArr[i] = i;
+                    Console.WriteLine("arr[{0}]: {1}", i, intArr[i]);
+                }
+                Console.WriteLine("Exception occurred, this won't be displayed");
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine("\n ERROR: " + e.Message);
+                Console.WriteLine("\n SOURCE: " + e.Source);
+            }
+            finally
+            {
+                Console.WriteLine("Finally block");
+            }
+            Console.WriteLine("After finally block");
+            Console.ReadLine();
+        }
+    }
+}

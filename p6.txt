@@ -1,0 +1,43 @@
+using System;
+
+namespace VirtualAndOverride
+{
+    public class Customer
+    {
+        public virtual void CustomerType()
+        {
+            Console.WriteLine("I'm Customer");
+        }
+    }
+
+    public class CorporateCustomer : Customer
+    {
+        public override void CustomerType()
+        {
+            Console.WriteLine("I'm Corporate Customer");
+        }
+    }
+
+    public class PersonalCustomer : Customer
+    {
+        public override void CustomerType()
+        {
+            Console.WriteLine("I'm Personal Customer");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Customer[] c = new Customer[3];
+            c[0] = new CorporateCustomer();
+            c[1] = new CorporateCustomer();
+            c[2] = new CorporateCustomer();
+            foreach(Customer customerobject in c)
+            {
+                customerobject.CustomerType();
+            }
+            Console.ReadLine();
+        }
+    }
+}

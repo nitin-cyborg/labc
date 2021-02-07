@@ -1,0 +1,36 @@
+using System;
+
+namespace JaggedArray
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[][] myjag = new int[3][];
+            for (int i = 0; i < myjag.Length; i++)
+            {
+                myjag[i] = new int[i + 3];
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("Enter the elements of row {0}", i);
+
+                for (int j = 0; j < myjag[i].Length; j++)
+                {
+                    myjag[i][j] = int.Parse(Console.ReadLine());
+                }
+            }
+            int sum = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < myjag[i].Length; j++)
+                {
+                    sum += myjag[i][j];
+                }
+            }
+            Console.WriteLine("Sum = " + sum);
+            Console.ReadLine();
+        }
+    }
+}

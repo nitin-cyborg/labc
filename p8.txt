@@ -1,0 +1,40 @@
+using System;
+
+namespace AbstractClassAndMethods
+{
+    abstract class Test
+    {
+        public int a;
+        public abstract void A();
+    }
+    class Derived1 : Test
+    {
+        public override void A()
+        {
+            Console.WriteLine("Derived1 A");
+            base.a++;
+            Console.WriteLine("a = {0}", base.a);
+        }
+    }
+
+    class Derived2 : Test
+    {
+        public override void A()
+        {
+            Console.WriteLine("Derived2 A");
+            base.a--;
+            Console.WriteLine("a = {0}", base.a);
+            Console.ReadLine();
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Test test1 = new Derived1();
+            test1.A();
+            Test test2 = new Derived2();
+            test2.A();
+        }
+    }
+}

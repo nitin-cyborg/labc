@@ -1,0 +1,45 @@
+using System;
+
+namespace BoxUnbox
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num;
+            Console.Write("Enter the number: ");
+            num = int.Parse(Console.ReadLine());
+            Object o = num;
+            Console.WriteLine("Value in num: " + num);
+            Console.WriteLine("Value in object 0: " + o);
+            int n;
+            n = (int)o;
+            Console.WriteLine("Value of n: " + n);
+            Console.ReadLine();
+        }
+    }
+}
+
+
+
+namespace InvalidUnboxing
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num = 123;
+            object obj = num;
+            try
+            {
+                int j = (short)obj;
+                System.Console.WriteLine("Unboxing");
+            }
+            catch (System.InvalidCastException e)
+            {
+                System.Console.WriteLine("{0} Error: Incorrect unboxing", e.Message);
+            }
+            System.Console.Read();
+        }
+    }
+}
